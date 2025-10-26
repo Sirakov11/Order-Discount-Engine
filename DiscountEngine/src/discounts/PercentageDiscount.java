@@ -1,4 +1,0 @@
-package discounts;
-
-public class PercentageDiscount {
-}

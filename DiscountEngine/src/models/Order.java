@@ -33,4 +33,9 @@ public class Order {
     public double getDiscountApplied(){
         return discountApplied;
     }
+
+    public void applyDiscount(double discount){
+        this.discountApplied += discount;
+        this.total -= discount;
+    }
 }
