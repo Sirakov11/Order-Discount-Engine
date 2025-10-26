@@ -7,11 +7,11 @@ public class Order {
     private double total;
     private double discountApplied;
 
-    public Order(int id, List<OrderItem> items, double total, double discountApplied){
+    public Order(int id, List<OrderItem> items){
         this.id = id;
         this.items = items;
-        this.total = total;
-        this.discountApplied = discountApplied;
+        this.total = calculateTotal();
+        this.discountApplied = 0;
     }
 
     private double calculateTotal(){
