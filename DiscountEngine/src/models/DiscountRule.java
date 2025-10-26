@@ -1,4 +1,6 @@
 package models;
+import models.Order;
 
-public class DiscountRule {
+public interface DiscountRule {
+    void apply(Order order);
 }
