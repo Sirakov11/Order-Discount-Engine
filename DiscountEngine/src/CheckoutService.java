@@ -1,11 +1,20 @@
+import models.Discount;
 import models.Order;
 import java.util.Set;
 
 public class CheckoutService {
 
+    Set<Discount> availableDiscounts;
+
+    public CheckoutService (Set<Discount> discounts){
+        this.availableDiscounts = discounts;
+    }
+
     public void checkout(Order order){
-        DiscountEngine.applyOrderValueDiscount(order);
-        DiscountEngine.applyBuyXGetYFree(order, "Tea", 3, 1);
         DiscountEngine.applyComboDiscount(order, Set.of("Coffee", "Milk"), 5);
+
+        for(Discount discount : availableDiscounts) {
+            discount.apply(order);
+        }
     }
 }

@@ -1,4 +1,6 @@
 import models. *;
+
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -21,7 +23,11 @@ public class Main {
 
         Order order = new Order(1, items);
 
-        CheckoutService checkout = new CheckoutService();
+        Set<Discount> discounts = new HashSet<>();
+        discounts.add(new OrderByValue());
+        discounts.add( new BuyXgetYFree("Tea", 3, 1));
+
+        CheckoutService checkout = new CheckoutService(discounts);
         checkout.checkout(order);
 
         System.out.println("First total: $" + (order.getTotal() + order.getDiscountApplied()));
@@ -30,3 +36,5 @@ public class Main {
 
     }
 }
+
+//
