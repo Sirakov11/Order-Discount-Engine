@@ -1,3 +1,5 @@
+package discounts;
+
 import models.Discount;
 import models.Order;
 import models.OrderItem;
@@ -26,3 +28,5 @@ public class BuyXgetYFree implements Discount {
 
     }
 }
+
+

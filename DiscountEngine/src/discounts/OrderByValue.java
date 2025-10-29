@@ -1,3 +1,5 @@
+package discounts;
+
 import models.Discount;
 import models.Order;
 
@@ -11,3 +13,5 @@ public class OrderByValue implements Discount {
             }
     }
 }
+
+

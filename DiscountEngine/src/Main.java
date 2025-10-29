@@ -1,4 +1,7 @@
 import models. *;
+import discounts.BuyXgetYFree;
+import discounts.OrderByValue;
+import discounts.ApplyComboDiscount;
 
 import java.util.HashSet;
 import java.util.List;
@@ -26,6 +29,7 @@ public class Main {
         Set<Discount> discounts = new HashSet<>();
         discounts.add(new OrderByValue());
         discounts.add( new BuyXgetYFree("Tea", 3, 1));
+        discounts.add(new ApplyComboDiscount(Set.of("Coffee", "Milk"), 5));
 
         CheckoutService checkout = new CheckoutService(discounts);
         checkout.checkout(order);

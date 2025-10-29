@@ -11,8 +11,6 @@ public class CheckoutService {
     }
 
     public void checkout(Order order){
-        DiscountEngine.applyComboDiscount(order, Set.of("Coffee", "Milk"), 5);
-
         for(Discount discount : availableDiscounts) {
             discount.apply(order);
         }
