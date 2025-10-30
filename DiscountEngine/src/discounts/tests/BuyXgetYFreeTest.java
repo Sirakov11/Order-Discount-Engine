@@ -12,8 +12,8 @@ public class BuyXgetYFreeTest {
         System.out.println("Running BuyXgetYFree test: ");
         try {
             Product p = new Product(2, "Tea", 10.0, "$");
-            Order order = new Order(2, List.of(new OrderItem(p, 4))); // total 40
-            new BuyXgetYFree("Tea", 3, 1).apply(order); // 1 free -> discount 10
+            Order order = new Order(2, List.of(new OrderItem(p, 4))); 
+            new BuyXgetYFree("Tea", 3, 1).apply(order); 
             if (order.getTotal() != 30.0) {
                 throw new RuntimeException("Expected total 30.0, got " + order.getTotal());
             }
